@@ -53,7 +53,7 @@ const Table = () => {
           {  coindata? coindata?.map((i,key) => (
             <tr key={key} className="border-b-[1px]    border-white last:border-b-0 ">
               <td  className="lg:text-center py-6 capitalize flex justify-start  items-center">
-              {savedcoins.includes(i.id)?<Savebtn2 data={i.id}/>:<Savebtn data={i.id}/>}<Link to={`/${i.id}`}>
+              {savedcoins.includes(i?.id)?<Savebtn2 data={i.id}/>:<Savebtn data={i.id}/>}<Link to={`/${i.id}`}>
                   <img src={i.image} alt={i.symbol}  className="w-8 mx-4"/>
               </Link>
             <Link to={`/${i.id}`}>{i.symbol}</Link> </td>
