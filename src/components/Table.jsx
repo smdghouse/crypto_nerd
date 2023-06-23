@@ -53,30 +53,30 @@ const Table = () => {
           {  coindata? coindata?.map((i,key) => (
             <tr key={key} className="border-b-[1px]    border-white last:border-b-0 ">
               <td  className="lg:text-center py-6 capitalize flex justify-start  items-center">
-              {savedcoins.includes(i?.id)?<Savebtn2 data={i.id}/>:<Savebtn data={i.id}/>}<Link to={`/${i.id}`}>
-                  <img src={i.image} alt={i.symbol}  className="w-8 mx-4"/>
+              {savedcoins.includes(i?.id)?<Savebtn2 data={i?.id}/>:<Savebtn data={i?.id}/>}<Link to={`/${i?.id}`}>
+                  <img src={i?.image} alt={i?.symbol}  className="w-8 mx-4"/>
               </Link>
-            <Link to={`/${i.id}`}>{i.symbol}</Link> </td>
+            <Link to={`/${i?.id}`}>{i?.symbol}</Link> </td>
               
-              <td className="text-start py-6 capitalize"><Link to={`/${i.id}`}>{i.name}</Link></td>
+              <td className="text-start py-6 capitalize"><Link to={`/${i?.id}`}>{i?.name}</Link></td>
               <td className="text-start py-6 capitalize">{
                 new Intl.NumberFormat("en-in",{
                   style:"currency",
                   currency:currency
-                }).format(i.current_price)
+                }).format(i?.current_price)
               }</td>
               <td className="text-start hidden lg:table-cell py-6 capitalize">{i.total_volume}</td>
               <td className="text-start hidden lg:table-cell py-6 capitalize">
-                {i.market_cap_change_percentage_24h}%
+                {i?.market_cap_change_percentage_24h}%
               </td>
-              <td className={`text-start hidden lg:table-cell py-6 capitalize font-bold ${i.price_change_percentage_1h_in_currency>0?"text-green-700":"text-red-700"} `}>
-                {i.price_change_percentage_1h_in_currency?.toFixed(2)}
+              <td className={`text-start hidden lg:table-cell py-6 capitalize font-bold ${i?.price_change_percentage_1h_in_currency>0?"text-green-700":"text-red-700"} `}>
+                {i?.price_change_percentage_1h_in_currency?.toFixed(2)}
               </td>
-              <td className={`text-start hidden lg:table-cell py-6 capitalize font-bold ${i.price_change_percentage_1h_in_currency>0?"text-green-700":"text-red-700"} `}>
-                {i.price_change_percentage_24h_in_currency?.toFixed(2)}
+              <td className={`text-start hidden lg:table-cell py-6 capitalize font-bold ${i?.price_change_percentage_1h_in_currency>0?"text-green-700":"text-red-700"} `}>
+                {i?.price_change_percentage_24h_in_currency?.toFixed(2)}
               </td>
-              <td className={`text-start hidden lg:table-cell py-6 capitalize font-bold ${i.price_change_percentage_1h_in_currency>0?"text-green-700":"text-red-700"} `}>
-                {Number(i.price_change_percentage_7d_in_currency)?.toFixed(2)}
+              <td className={`text-start hidden lg:table-cell py-6 capitalize font-bold ${i?.price_change_percentage_1h_in_currency>0?"text-green-700":"text-red-700"} `}>
+                {Number(i?.price_change_percentage_7d_in_currency)?.toFixed(2)}
               </td>
             </tr>
           )):null}
