@@ -66,7 +66,9 @@ useEffect(()=>{
         }
         catch(error)
         {
-          console.log(error)
+          <div className="w-full h-screen flex justify-center items-center ">
+                <span className="capitalize text-black text-2xl font-bold">sorry you have heavily used api </span>
+            </div>
         }
       
      }

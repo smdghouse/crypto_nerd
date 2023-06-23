@@ -13,8 +13,17 @@ const Savecontext =({children})=>{
         setSaved_data(data)
     }
     useEffect(()=>{
-        fetchsavedata(savedcoins)
-        console.log(saved_data)
+        try{
+
+            fetchsavedata(savedcoins)
+            console.log(saved_data)
+        }
+        catch(error)
+        {
+            <div className="w-full h-screen flex justify-center items-center ">
+                <span className="capitalize text-black text-2xl font-bold">sorry you have heavily used api </span>
+            </div>
+        }
     },[savedcoins])
     const Addcoin = (coinid)=>{
         const oldcoins = JSON.parse(localStorage.getItem("coins"))
